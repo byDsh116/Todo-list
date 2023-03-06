@@ -55,11 +55,13 @@
     transform: translateX(0px);
 }
 
-.list-group-item.increase .list-group-item-label, .list-group-item.increase .list-group-item-input {
-    color: #e09f3e;
+.list-group-item.done .list-group-item-label, .list-group-item.done .list-group-item-input {
+    color: #696159;
+    text-decoration: line-through;
 }
   
-.list-group-item.increase .btn-star {
+.list-group-item.done .btn-star {
     color: #aeaeae;
 }
+
   

@@ -6,9 +6,9 @@ import TaskList from '../task-list/task-list'
 import './app.css'
 
 const data = [
-    { task: 'odin', date: '20.02.2022', increase: true },
-    { task: 'vosem', date: '20.02.2022', increase: false },
-    { task: 'sem', date: '20.02.2022', increase: false },
+    { task: 'odin', date: '20.02.2022', increase: true, id:1 },
+    { task: 'vosem', date: '20.02.2022', increase: false, id:2 },
+    { task: 'sem', date: '20.02.2022', increase: false, id:3 },
 ]
 
 function App() {
