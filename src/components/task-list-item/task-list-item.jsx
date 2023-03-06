@@ -7,7 +7,7 @@ class TaskListItem extends Component {
         super(props)
         this.state = {
             increase: false,
-            rise: false
+            important: false
         }
     }
 
@@ -17,27 +17,27 @@ class TaskListItem extends Component {
         }))
     }
 
-    onRise = () => {
-        this.setState(({rise}) => ({
-            rise: !rise
+    onImportant = () => {
+        this.setState(({important}) => ({
+            important: !important
         }))
     }
 
     render() {
         const {task, date} = this.props
-        const {done, rise} = this.state
+        const {done, important} = this.state
 
         let classNames = "list-group-item d-flex justify-content-between";
         if (done) {
             classNames += ' done';
         }
-        if (rise) {
+        if (important) {
             classNames += ' like';
         }
 
         return (
             <li className={classNames}>
-                <span className="list-group-item-label" onClick={this.onRise}> {task} </span>
+                <span className="list-group-item-label" onClick={this.onImportant}> {task} </span>
                 <input type="date" className="list-group-item-input" placeholder={date}/>
                 <div className='d-flex justify-content-center align-items-center'>
                     <button type="button"
