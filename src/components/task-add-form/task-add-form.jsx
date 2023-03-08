@@ -1,4 +1,5 @@
 import { Component } from 'react';
+
 import './task-add-form.css';
 
 class TaskAddForm extends Component {
@@ -10,30 +11,20 @@ class TaskAddForm extends Component {
         }
     }
 
-    // handleTaskChange = e => {
-    //     this.setState({
-    //         task: e.target.value
-    //     })
-    // }
-
-    // handleDateChange = e => {
-    //     this.setState({
-    //         date: e.target.value
-    //     })
-    // }
-
     onValueChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
-
-        }
-
-        )
-        console.log(e.target.task)
-        console.log(e.target.value)
-
+        })
     }
 
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.props.onAdd(this.state.task, this.state.date);
+        this.setState({
+            task: '',
+            date: ''
+        })
+    }
 
     render() {
         const { task, date } = this.state
@@ -42,7 +33,8 @@ class TaskAddForm extends Component {
             <div className="app-add-form">
                 <h3>Add new task</h3>
                 <form
-                    className="add-form d-flex">
+                    className="add-form d-flex"
+                    onSubmit = {this.onSubmit}>
                     <input type="text"
                         name='task'
                         value={task}
