@@ -18,8 +18,9 @@ class TaskAddForm extends Component {
     }
 
     onSubmit = (e) => {
-        e.preventDefault();
-        this.props.onAdd(this.state.task, this.state.date);
+        e.preventDefault()
+        if (this.state.task.length < 3 || !this.state.date) return
+        this.props.onAdd(this.state.task, this.state.date)
         this.setState({
             task: '',
             date: ''
@@ -34,7 +35,7 @@ class TaskAddForm extends Component {
                 <h3>Add new task</h3>
                 <form
                     className="add-form d-flex"
-                    onSubmit = {this.onSubmit}>
+                    onSubmit={this.onSubmit}>
                     <input type="text"
                         name='task'
                         value={task}

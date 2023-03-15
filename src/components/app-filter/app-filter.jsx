@@ -12,7 +12,7 @@ const AppFilter = () => {
             <button
                 className="btn btn-outline-light"
                 type="button"
-            > Need to do 
+            > Important task
             </button>
 
             <button
